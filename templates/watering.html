@@ -1,0 +1,23 @@
+{% extends "base.html" %}
+{% load static %}
+
+{% block content %}
+    <div class="container5">
+        <div class="form-container">
+            <h2>Enter Soil and Weather Parameters</h2>
+            <form  method="post">
+                {% csrf_token %}
+                {{ form.as_p }}
+                <button type="submit" class="fin">Predict</button>
+            </form>
+        </div>
+        <div class="result-container">
+            <h2>Prediction Result</h2>
+            {% if prediction %}
+                <p class="result">Recommended Crop: <strong>{{ prediction }}</strong></p>
+            {% else %}
+                <p>Submit the form to get prediction.</p>
+            {% endif %}
+        </div>
+    </div>
+{% endblock content %}

@@ -1,0 +1,50 @@
+
+{% extends "base.html" %}
+{% load static %}
+{% block content %}
+
+    <div class="main-container">
+    <!-- Upper Flex Row -->
+    <h1>Supervisors</h1>
+    <div class="row upper-row">
+        <div class="box">
+             <img src="{% static 'images/anurag.jpeg' %}" alt="My Image">
+             <div class="black">
+             <h4>Anurag Singh</h4>
+             </div>
+        </div>
+        <div class="box">
+             <img src="{% static 'images/mahesh.jpeg' %}" alt="My Image">
+             <div class="black">
+             <h4>Mahesh Singh</h4>
+             </div>
+        </div>
+    </div>
+
+    <!-- Lower Flex Row -->
+     <h1>Project Members</h1>
+    <div class="row lower-row">
+        <div class="box">
+             <img src="{% static 'images/tashik.jpeg' %}" alt="My Image">
+             <div class="black">
+             <h4>Tashik</h4>
+             </div>
+        </div>
+        <div class="box">
+             <img src="{% static 'images/yadav.png' %}" alt="My Image">
+             <div class="black">
+             <h4>Praduyumn</h4>
+             </div>
+        </div>
+        <div class="box">
+             <img src="{% static 'images/arun.png' %}" alt="My Image">
+             <div class="black">
+             <h4>Arun</h4>
+             </div>
+        </div>
+    </div>
+</div>
+
+
+{% endblock content %}
+

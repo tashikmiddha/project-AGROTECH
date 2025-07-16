@@ -1,0 +1,15 @@
+{% extends "base.html" %}
+{% load static %}
+{% block content %}
+  <header>
+    <h1>Dataset Repository</h1>
+    <input type="text" id="searchBar" placeholder="Search datasets...">
+  </header>
+
+  <main id="datasetContainer" class="flex-container">
+    <!-- Dataset cards will be injected here by JS -->
+  </main>
+
+  <script src="{% static "script_dataset.js" %}"></script>
+  {% endblock content %}
+

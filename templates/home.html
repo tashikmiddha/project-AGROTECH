@@ -1,0 +1,67 @@
+{% extends "base.html" %}
+{% load static %}
+{% block content %}
+   <div class="container1">
+  <h1>Increase Agriculture Yield</h1>
+  <div class="relay-line">
+
+    <div class="step">
+      <div class="line-circle">1</div>
+      <div class="step-content">
+        <h2>Sensor Data Collection</h2>
+        <p>We deploy sensors in the field to collect real-time data including temperature, humidity, soil pH, rainfall, and NPK levels.</p>
+      </div>
+    </div>
+
+    <div class="step">
+      <div class="line-circle">2</div>
+      <div class="step-content">
+        <h2>Dataset Generation</h2>
+        <p>The collected raw data from all sensors is cleaned and formatted to build structured datasets used for model training.</p>
+      </div>
+    </div>
+
+    <div class="step">
+      <div class="line-circle">3</div>
+      <div class="step-content">
+        <h2>Model 1: Crop Prediction</h2>
+        <p>We train a machine learning model to predict the most suitable crop based on current soil and environmental conditions.</p>
+      </div>
+    </div>
+
+    <div class="step">
+      <div class="line-circle">4</div>
+      <div class="step-content">
+        <h2>Model 2: Watering Schedule Prediction</h2>
+        <p>Using weather forecasts and soil moisture data, we predict the optimal irrigation timing and quantity for the selected crop.</p>
+      </div>
+    </div>
+
+    <div class="step">
+      <div class="line-circle">5</div>
+      <div class="step-content">
+        <h2>Model 3: Fertilizer Recommendation</h2>
+        <p>Based on NPK levels, soil type, and the chosen crop, the system recommends the right fertilizer combination for better yield.</p>
+      </div>
+    </div>
+
+    <div class="step">
+      <div class="line-circle">6</div>
+      <div class="step-content">
+        <h2>Model Evaluation & Testing</h2>
+        <p>Each model is tested and validated using unseen data to ensure high accuracy, reliability, and performance in real conditions.</p>
+      </div>
+    </div>
+
+    <div class="step">
+      <div class="line-circle">7</div>
+      <div class="step-content">
+        <h2>Deployment & Monitoring</h2>
+        <p>All models are integrated into a smart dashboard or mobile app for real-time monitoring and decision-making by farmers.</p>
+      </div>
+    </div>
+
+  </div>
+</div>
+  <script src={% static "script_home.js" %}></script>
+{% endblock content %}

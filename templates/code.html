@@ -1,0 +1,18 @@
+{% extends "base.html" %}
+{% load static %}
+{% block content %}
+ <div class="code">
+  <h1>My Jupyter Notebooks</h1>
+  <div class="note">
+  <div class="notebook-container" id="notebookContainer">
+    <!-- Notebook cards will be loaded here -->
+  </div>
+
+  <div class="viewer-section" id="viewerSection">
+    <iframe id="notebookViewer" src="" frameborder="0"></iframe>
+  </div>
+  </div>
+
+  <script src={% static "script_code.js" %}></script>
+</div>
+{% endblock content %}

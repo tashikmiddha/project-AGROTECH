@@ -1,0 +1,128 @@
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    font-family:'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    background-color: white;
+}
+
+.container {
+    display: flex;
+    height: 100%;
+    background-color:white;
+}
+
+.sidebar {
+    position: fixed;
+    top: 0;
+    left: 0;
+    height: 100vh;
+    z-index: 1000;
+    white-space: nowrap;
+    font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+    overflow-y: auto;
+    overflow-x: hidden;
+}
+
+.content {
+    flex-shrink: 1;
+    margin-left: 200px;
+    transition: margin-left 0.3s ease;
+    
+}
+
+.content.collapsed {
+    flex-shrink: 1;
+    margin-left: 60px;
+}
+
+.sidebar {
+    width: 200px;
+    background-color: white;
+    color: black;
+    transition: width 0.3s ease;
+    border-right: 1px rgb(0, 0, 0) solid;
+}
+
+.sidebar.collapsed {
+    width: 60px;
+    border-right: 1px rgb(0, 0, 0) solid;
+}
+
+.toggle-btn {
+    background-color: green;
+    color: white;
+    cursor: pointer;
+    font-size: 18px;
+    margin-bottom: 3px;
+    padding: 8px;
+}
+
+.menu {
+    list-style: none;
+    padding: 0;
+    margin-top: 10px;
+}
+
+.menu li {
+    padding: 15px 20px;
+    white-space: nowrap;
+}
+
+.menu li a{
+    color: black;
+    text-decoration: none;
+    display: block;
+    transition: color 1s;
+    font-size: 1.2rem;
+    padding: 5px;
+}
+
+.nav:hover {
+    color: #34495e;
+}
+
+.menu li:hover {
+    background-color: rgb(200, 204, 200);
+}
+.sidebar.collapsed .ind{
+    flex-grow: 0;
+    text-align: center;
+    font-size: 0;
+    display: block;
+}
+
+.sidebar.collapsed .ind::before {
+    content: attr(data-short);
+    font-size: 16px;
+    display: block;
+    text-align: center;
+    flex-grow: 0;
+} 
+
+
+.sidebar.collapsed .name {
+    text-align: center;
+    font-size: 0;
+    background-color:transparent;
+}
+.toggle-btn i{
+    width: 60px;
+    text-align: center;
+}
+/* .sidebar.collapsed .name::before {
+    padding: 10px;
+    font-size: 1.5rem;
+    display: block;
+    text-align: center;
+    content: attr(data-short);
+}
+
+.name {
+    text-align: center;
+    font-size: 1.3rem;
+    padding: 15px;
+} */

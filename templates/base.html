@@ -1,0 +1,634 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Sidebar Layout</title>
+    <link rel="stylesheet" href={% static "styles1.css" %}>
+    <script src="https://kit.fontawesome.com/e616eb472b.js" crossorigin="anonymous"></script>
+    <style>
+        /* ////// */
+
+        .container1 {
+            flex-shrink: 0;
+            width: 90%;
+            max-width: 1000px;
+            margin: 0 auto;
+            padding: 40px 20px;
+        }
+
+        .container1 h1 {
+            text-align: center;
+            margin-bottom: 50px;
+            color: #000000;
+        }
+
+        .relay-line {
+            position: relative;
+            margin-left: 40px;
+            border-left: 3px solid #2a7f62;
+            padding-left: 40px;
+        }
+
+        .step {
+            position: relative;
+            margin-bottom: 60px;
+        }
+
+        .line-circle {
+            position: absolute;
+            left: -62px;
+            top: 0;
+            width: 40px;
+            height: 40px;
+            background: #2a7f62;
+            color: #fff;
+            border-radius: 50%;
+            text-align: center;
+            line-height: 40px;
+            font-size: 18px;
+            font-weight: bold;
+        }
+
+        .step-content {
+            background: #fff;
+            padding: 20px 25px;
+            border-radius: 8px;
+            box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+        }
+
+        .step-content h2 {
+            margin-top: 0;
+            color: #000000;
+        }
+
+
+
+        /* team */
+
+        .box {
+            flex: 1;
+            height: 180px;
+            background-color: black;
+            border-radius: 8px;
+            overflow: hidden;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            transition: transform 1s ease;
+        }
+
+        .box:hover {
+            transform: translateY(-8px);
+        }
+
+        .box:hover img {
+            opacity: 0.3;
+        }
+
+        .box:hover h4 {
+            opacity: 1;
+        }
+
+        .box h4 {
+            font-size: 1.3rem;
+            margin-top: 10px;
+            transition: .5s ease;
+            opacity: 0;
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            -ms-transform: translate(-50%, -50%);
+            text-align: center;
+        }
+
+        .box img {
+            opacity: 1;
+            display: block;
+            width: 100%;
+            height: 90%;
+            object-fit: cover;
+            /* Makes the image fill box without distortion */
+            border-radius: 8px;
+            backface-visibility: hidden;
+        }
+
+        .main-container {
+            display: flex;
+            flex-direction: column;
+            gap: 20px;
+            padding: 20px;
+            color: rgb(39, 33, 33);
+            margin-left: 120px;
+            position: relative;
+            height:100vh;
+        }
+
+        .main-container h1 {
+            text-align: center;
+            margin-top: 30px;
+            margin-bottom: 40px;
+            color: #000000;
+        }
+
+        .row {
+            display: flex;
+            gap: 20px;
+        }
+
+        .upper-row .box {
+            flex: 1;
+            height: 350px;
+            width: 150px;
+            background-color: transparent;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 20px;
+            border-radius: 8px;
+
+        }
+
+        .box {
+            animation-name: key5;
+            animation-duration: 3s;
+        }
+
+        @keyframes key5 {
+            0% {
+                transform: translateX(-1000px);
+            }
+
+            100% {
+                transform: translateX(0px);
+            }
+        }
+
+        .lower-row .box {
+            flex: 1;
+            height: 250px;
+            background-color: transparent;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 20px;
+            border-radius: 8px;
+            gap:10px;
+        }
+
+        /* term */
+        .term {
+            color: rgb(79, 65, 65);
+            margin: 10px;
+            margin-left: 15%;
+            margin-right: 15%;
+        }
+
+        .term h1 {
+            font-size: 3rem;
+            color: black;
+            margin-top: 10px;
+            margin-bottom: 30px;
+            text-align: center;
+        }
+
+        /* datasets */
+
+        header {
+            padding: 20px;
+            color: #000000;
+            text-align: center;
+            font-size: 2.5rem;
+        }
+
+        #searchBar {
+            margin-top: 30px;
+            padding: 10px;
+            width: 80%;
+            max-width: 500px;
+            border: 0.5px solid black;
+            border-radius: 5px;
+        }
+
+        .flex-container {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            padding: 20px;
+        }
+
+        .dataset-card {
+            display: flex;
+            flex-direction: column;
+            background:url('https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSNg9Zo88Ou9S7KiDNgKJg1Xuz6E0YIQuAeWw&s');
+            overflow: hidden;
+            border-radius: 8px;
+            margin: 10px;
+            padding: 20px;
+            width: 300px;
+            height: 180px;
+            text-align: center;
+            align-items: center;
+            justify-content: center;
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+            transition: transform 0.2s;
+            animation-name: key3;
+            animation-duration: 3s;
+            color: black;
+        }
+
+        .dataset-card img {
+            display: none;
+        }
+
+        @keyframes key3 {
+            0% {
+                transform: scale(0);
+            }
+
+            100% {
+                transform: scale(1);
+            }
+        }
+
+        .dataset-card:hover {
+            transform: scale(1.02);
+        }
+
+        .download-btn {
+            background-color: #28a745;
+            color: white;
+            padding: 10px;
+            text-decoration: none;
+            display: inline-block;
+            margin-top: 10px;
+            border-radius: 5px;
+        }
+
+        .download-btn:hover {
+            background-color: #218838;
+        }
+
+
+        /* code */
+
+        .code h1 {
+            text-align: center;
+            margin-bottom: 30px;
+            color: #000000;
+            margin-top: 40px;
+            font-size: 2.5rem;
+        }
+
+        .code {
+            margin-top: 10px;
+
+        }
+
+        .note {
+            display: flex;
+
+        }
+
+        .notebook-container {
+            margin-top: 40px;
+            display: flex;
+            flex-direction: column;
+            flex-wrap: wrap;
+            gap: 35px;
+            justify-content: center;
+            align-items: center;
+            margin-left: 40px;
+            width: 30vw;
+        }
+
+        .notebook-card {
+            background-color: green;
+            border: 1px solid #ccc;
+            padding: 15px;
+            width: 200px;
+            cursor: pointer;
+            color: white;
+            transition: box-shadow 1s ease, transform 1s;
+            text-align: center;
+            border-radius: 4px;
+            animation-name: key1;
+            animation-duration: 3s;
+
+        }
+
+        @keyframes key1 {
+            0% {
+                transform: translateX(-500px);
+            }
+
+            100% {
+                transform: translateX(0px);
+            }
+        }
+
+
+        .notebook-card:hover {
+            box-shadow: 5px 5px 10px rgba(255, 255, 255, 0.2);
+            transform: translateY(-5px);
+        }
+
+        .viewer-section {
+            margin-top: 30px;
+            display: flex;
+            justify-content: center;
+            width: 50vw;
+        }
+
+        #notebookViewer {
+            width: 90%;
+            height: 600px;
+            border: 2px solid rgb(73, 65, 65);
+            animation-name: key2;
+            animation-duration: 3s;
+        }
+
+        @keyframes key2 {
+            0% {
+                transform: translateX(+750px);
+            }
+
+            100% {
+                transform: translateX(0px);
+            }
+        }
+
+        /* loading */
+
+
+        #loading-overlay {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100vw;
+            height: 100vh;
+            background-color: #0d1117;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            z-index: 9999;
+            transition: opacity 2s ease;
+        }
+
+        .spinner {
+            width: 70px;
+            height: 70px;
+            border: 8px solid #ccc;
+            border-top: 8px solid green;
+            border-radius: 50%;
+            animation: spin 0.4s linear infinite;
+        }
+
+        @keyframes spin {
+            to {
+                transform: rotate(360deg);
+            }
+        }
+
+        .loading {
+            overflow: hidden;
+        }
+
+        /* model */
+        #one {
+            background-color: white;
+        }
+
+        #modelList li a {
+            font-size: small;
+            color: black;
+        }
+
+
+        /* crop_prediction */
+
+        .container5 {
+            display: flex;
+            justify-content: space-between;
+            margin: 50px;
+            height:100vh;
+        }
+
+        .form-container,
+        .result-container {
+            padding: 20px;
+            border: 1px solid #ccc;
+            height: 80vh;
+        }
+
+        .form-container {
+            width: 50vw;
+            margin: 30px;
+            text-align: center;
+            border: white solid 1px;
+        }
+
+        .form-container h2 {
+            margin-bottom: 10px;
+            font-size: 2rem;
+        }
+
+        .result-container {
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            width: 20vw;
+            margin: 30px;
+            text-align: center;
+            border: white solid 1px;
+        }
+
+        .result {
+            font-size: 20px;
+            color: green;
+        }
+
+        .form-control {
+            margin: 5px;
+            width: 100%;
+            height: 50px;
+            color: #000000;
+        }
+
+        .fin {
+            padding: 10px;
+            margin-top: 20px;
+            background-color: green;
+            color: white;
+            border-radius: 4px;
+            transition: transform 1s;
+            font-size: 1.2rem;
+            border: 1px solid white;
+        }
+
+        .fin:hover {
+            transform: translateY(-5px);
+        }
+
+        /* contact */
+        .con{
+            display: flex;
+            justify-content: center;
+            align-content: center;
+            width: 100vw;
+            height: 100vh;
+        }
+
+
+        .container6{
+            max-width: 1000px;
+            margin: auto;
+            display: flex;
+            flex-wrap: wrap;
+            background: white;
+            border-radius: 12px;
+            overflow: hidden;
+            box-shadow: 0 8px 20px rgba(0, 0, 0, 0.1);
+        }
+
+        .contact-info {
+            flex: 1 1 300px;
+            padding: 40px;
+            background: #e4ece9;
+        }
+
+        .contact-info h1 {
+            font-size: 2rem;
+            margin-bottom: 10px;
+        }
+
+        .contact-info p {
+            margin-bottom: 30px;
+        }
+
+        .logos {
+            display: flex;
+            gap: 15px;
+        }
+
+        .logos img {
+            width: 35px;
+            height: 35px;
+            transition: transform 0.3s;
+        }
+
+        .logos img:hover {
+            transform: scale(1.2);
+        }
+
+        .contact-form {
+            flex: 2 1 500px;
+            padding: 40px;
+            display: flex;
+            flex-direction: column;
+            gap: 20px;
+        }
+
+        .contact-form input,
+        .contact-form textarea {
+            width: 100%;
+            padding: 15px;
+            border: 1px solid #ccc;
+            border-radius: 8px;
+            transition: border-color 0.3s;
+        }
+
+        .contact-form input:focus,
+        .contact-form textarea:focus {
+            border-color: #007BFF;
+            outline: none;
+        }
+
+        .contact-form button {
+            padding: 15px;
+            background: rgb(65, 138, 65);
+            border: none;
+            color: white;
+            font-size: 1rem;
+            border-radius: 8px;
+            cursor: pointer;
+            transition: background 0.3s;
+            text-align: center;
+        }
+
+        .contact-form button:hover {
+            background: green;
+        }
+
+        .form-message {
+            font-size: 0.9rem;
+            color: green;
+        }
+        /* tashik middha */
+        .ensure{
+            text-align: center;
+            width: 100vw;
+            height: 40px;
+            background-color: #000000;
+            color: white;
+            z-index: 99999;
+            position: fixed;
+            bottom: 0;
+            left: 0;
+            padding: 3px;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="container">
+        <div class="sidebar" id="sidebar">
+            <button class="toggle-btn" onclick="toggleSidebar()"><i class="fa-solid fa-bars"></i><span
+                    class="name">AGRIPROJECT</span></button>
+            <ul class="menu">
+                <li class="nav"><a href="../home/"><i class="fa-solid fa-house"></i><span class="ind"> Home</span></a>
+                </li>
+                <li class="nav"><a href="../datasets/"><i class="fa-solid fa-database"></i><span class="ind">
+                            Datasets</span></a>
+                <li class="nav"><a href="../code/"><i class="fa-solid fa-code"></i><span class="ind"> Code</span></a>
+                </li>
+                <li id="one" onclick="toggleModels()" style="cursor: pointer;">
+                    <i class="fa-solid fa-robot"></i> <span class="ind">Models ▼</span>
+                    <ul id="modelList" style="display: none; margin-left: 15px;">
+                        <li class="mod"><a href="../crop_prediction/">Crop Prediction</a></li>
+                        <li class="mod"><a href="../watering/">Watering System</a></li>
+                        <li class="mod"><a href="../fertilizer_prediction/">Fertilizer Prediction</a></li>
+                    </ul>
+                </li>
+                <li class="nav"><a href="../team/"><i class="fa-solid fa-people-group"></i><span class="ind">
+                            Team</span></a></li>
+                <li class="nav"><a href="../term/"><i class="fa-solid fa-circle-info"></i><span class="ind">
+                            Term</span></a></li>
+                
+                </li>
+                
+                
+                <li class="nav"><a href="../contact/"><i class="fa-solid fa-earth-americas"></i><span class="ind">
+                            Contact</span></a></li>
+            </ul>
+        </div>
+        <div class="content" id="content">
+
+            <div id="loading-overlay">
+                <div class="spinner"></div>
+            </div>
+            {% block content %}
+            {% endblock content %}
+        </div>
+    </div>
+    <div class="ensure">
+            <h3>Made by Tashik Middha | All Rights Reserved</h3>
+        </div>
+    <script src="{% static "script1.js" %}"></script>
+</body>
+
+</html>
